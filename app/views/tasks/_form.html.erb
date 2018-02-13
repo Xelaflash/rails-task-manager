@@ -10,8 +10,11 @@
     <%= f.text_field :details, class: 'form-control' %>
   </div>
 
-  <%= f.label :completed %>
-  <%= f.check_box :completed %>
+  <!-- 4 lines below checks if this is a new record -->
+  <% unless @task.new_record? %>
+    <%= f.label :completed %>
+    <%= f.check_box :completed %>
+  <% end %>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
 </div>
